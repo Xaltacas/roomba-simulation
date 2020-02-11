@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>6</zoom_level>
+  <zoom_level>5</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>930</x>
-      <y>366</y>
-      <w>174</w>
-      <h>114</h>
+      <x>865</x>
+      <y>350</y>
+      <w>145</w>
+      <h>95</h>
     </coordinates>
     <panel_attributes>IHMRoomba
 --
@@ -23,10 +23,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>702</x>
-      <y>282</y>
-      <w>126</w>
-      <h>114</h>
+      <x>730</x>
+      <y>280</y>
+      <w>105</w>
+      <h>95</h>
     </coordinates>
     <panel_attributes>Simulation
 --
@@ -39,10 +39,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>690</x>
-      <y>444</y>
-      <w>186</w>
-      <h>138</h>
+      <x>745</x>
+      <y>495</y>
+      <w>155</w>
+      <h>115</h>
     </coordinates>
     <panel_attributes>Environement
 --
@@ -64,10 +64,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>696</x>
-      <y>624</y>
-      <w>126</w>
-      <h>126</h>
+      <x>750</x>
+      <y>645</y>
+      <w>105</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>/Element/
 --
@@ -77,20 +77,17 @@
 --
 + Element(forme:Forme,c:Color)
 + draw(g:Graphics2D)
-+ getPosX():int
-+ getPosY():int
-+ getRayon():int
-+ toString():String
+/+ toString():String/
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>432</x>
-      <y>306</y>
-      <w>198</w>
-      <h>210</h>
+      <x>505</x>
+      <y>365</y>
+      <w>165</w>
+      <h>175</h>
     </coordinates>
     <panel_attributes>Robot
 --
@@ -120,10 +117,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>210</x>
-      <y>336</y>
-      <w>126</w>
-      <h>102</h>
+      <x>320</x>
+      <y>390</y>
+      <w>105</w>
+      <h>85</h>
     </coordinates>
     <panel_attributes>/Capteur/
 --
@@ -137,10 +134,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>624</x>
-      <y>342</y>
-      <w>90</w>
-      <h>30</h>
+      <x>665</x>
+      <y>360</y>
+      <w>75</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=Black
@@ -152,10 +149,10 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>738</x>
-      <y>390</y>
-      <w>18</w>
-      <h>66</h>
+      <x>785</x>
+      <y>370</y>
+      <w>15</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=Black
@@ -163,15 +160,15 @@ m1=1
 m2=1
 
 </panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>822</x>
-      <y>378</y>
-      <w>120</w>
-      <h>30</h>
+      <x>830</x>
+      <y>360</y>
+      <w>45</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=Black
@@ -179,15 +176,15 @@ m1=1
 m2=1
 
 </panel_attributes>
-    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;70.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>792</x>
-      <y>576</y>
-      <w>30</w>
-      <h>60</h>
+      <x>830</x>
+      <y>605</y>
+      <w>25</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=Black
@@ -200,10 +197,10 @@ m2=0..n
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>330</x>
-      <y>384</y>
-      <w>114</w>
-      <h>30</h>
+      <x>420</x>
+      <y>430</y>
+      <w>95</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=Black
@@ -215,10 +212,10 @@ m2=4
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>624</x>
-      <y>462</y>
-      <w>78</w>
-      <h>30</h>
+      <x>665</x>
+      <y>510</y>
+      <w>90</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=Black
@@ -226,15 +223,15 @@ m1=1
 m2=1
 
 </panel_attributes>
-    <additional_attributes>110.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>624</x>
-      <y>444</y>
-      <w>78</w>
-      <h>30</h>
+      <x>665</x>
+      <y>495</y>
+      <w>90</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=White
@@ -242,62 +239,63 @@ m1=    1
 m2=       1
 
 </panel_attributes>
-    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>870</x>
-      <y>438</y>
-      <w>72</w>
-      <h>30</h>
+      <x>890</x>
+      <y>440</y>
+      <w>15</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=Black
 m1=1
 m2=1
 </panel_attributes>
-    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>696</x>
-      <y>768</y>
-      <w>126</w>
-      <h>126</h>
+      <x>750</x>
+      <y>765</y>
+      <w>105</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>Tache
 --
 
 --
 + Tache(nForme:Forme,c:Color)
-+ aspirer()</panel_attributes>
++ aspirer()
++ toString():String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>864</x>
-      <y>624</y>
-      <w>156</w>
-      <h>132</h>
+      <x>890</x>
+      <y>645</y>
+      <w>130</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>Obstacle
 --
 
 --
 + Obstacle(nforme:Forme,c:Color)
-</panel_attributes>
++ toString():String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>162</x>
-      <y>186</y>
-      <w>222</w>
-      <h>102</h>
+      <x>280</x>
+      <y>265</y>
+      <w>185</w>
+      <h>85</h>
     </coordinates>
     <panel_attributes>CapteurCollision
 --
@@ -312,10 +310,10 @@ m2=1
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>54</x>
-      <y>336</y>
-      <w>126</w>
-      <h>102</h>
+      <x>190</x>
+      <y>390</y>
+      <w>105</w>
+      <h>85</h>
     </coordinates>
     <panel_attributes>CapteurSalete
 --
@@ -329,10 +327,10 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>264</x>
-      <y>282</y>
-      <w>18</w>
-      <h>66</h>
+      <x>365</x>
+      <y>345</y>
+      <w>15</w>
+      <h>55</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
@@ -340,10 +338,10 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>174</x>
-      <y>390</y>
-      <w>48</w>
-      <h>18</h>
+      <x>290</x>
+      <y>435</y>
+      <w>40</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
@@ -351,10 +349,10 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>330</x>
-      <y>414</y>
-      <w>114</w>
-      <h>30</h>
+      <x>420</x>
+      <y>455</y>
+      <w>95</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=white
@@ -366,45 +364,48 @@ m2=1
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>324</x>
-      <y>618</y>
-      <w>144</w>
-      <h>126</h>
+      <x>415</x>
+      <y>625</y>
+      <w>120</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>/Forme/
 --
 
 --
-+ intersect(f:Forme)
++ intersect(f:Forme):boolean
 /+ draw(g:Graphics2D,coul:Color)/
+/+toString():String/
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>162</x>
-      <y>762</y>
-      <w>126</w>
-      <h>126</h>
+      <x>215</x>
+      <y>745</y>
+      <w>170</w>
+      <h>105</h>
     </coordinates>
-    <panel_attributes>Rectange
+    <panel_attributes>Rectangle
 --
 - posX:int
 - posY:int
 - lenght:int
 - height:int
 --
-+ draw(g:Graphics2D,coul:Color)</panel_attributes>
++ Rectangle(x:int,y:int,len:int,hei:int)
++ draw(g:Graphics2D,coul:Color)
++ toString():String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>462</x>
-      <y>666</y>
-      <w>246</w>
-      <h>30</h>
+      <x>530</x>
+      <y>665</y>
+      <w>230</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=Black
@@ -412,32 +413,34 @@ m1=1
 m2=1
 
 </panel_attributes>
-    <additional_attributes>390.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>440.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>330</x>
-      <y>762</y>
-      <w>126</w>
-      <h>126</h>
+      <x>420</x>
+      <y>745</y>
+      <w>105</w>
+      <h>105</h>
     </coordinates>
-    <panel_attributes>Rond
+    <panel_attributes>Cercle
 --
 - posX:int
 - posY:int
 - rayon: 
 --
-+ draw(g:Graphics2D,coul:Color)</panel_attributes>
++ Cercle(x:int,y:int,nrayon:int)
++ draw(g:Graphics2D,coul:Color)
++ toString():String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>816</x>
-      <y>672</y>
-      <w>60</w>
-      <h>18</h>
+      <x>850</x>
+      <y>685</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
@@ -445,10 +448,10 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>774</x>
-      <y>744</y>
-      <w>18</w>
-      <h>36</h>
+      <x>815</x>
+      <y>745</y>
+      <w>15</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
@@ -456,10 +459,10 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>384</x>
-      <y>738</y>
-      <w>18</w>
-      <h>36</h>
+      <x>465</x>
+      <y>725</y>
+      <w>15</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
@@ -467,36 +470,38 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>276</x>
-      <y>732</y>
-      <w>60</w>
-      <h>42</h>
+      <x>380</x>
+      <y>720</y>
+      <w>45</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>80.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>70.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>486</x>
-      <y>762</y>
-      <w>126</w>
-      <h>126</h>
+      <x>550</x>
+      <y>745</y>
+      <w>105</w>
+      <h>105</h>
     </coordinates>
-    <panel_attributes>polygone
+    <panel_attributes>Polygone
 --
 TODO
 --
-+ draw(g:Graphics2D,coul:Color)</panel_attributes>
++ Polygone()
++ draw(g:Graphics2D,coul:Color)
++ toString():String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>462</x>
-      <y>732</y>
-      <w>36</w>
-      <h>42</h>
+      <x>530</x>
+      <y>720</y>
+      <w>30</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;40.0;50.0</additional_attributes>
@@ -504,28 +509,30 @@ TODO
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>162</x>
-      <y>618</y>
-      <w>126</w>
-      <h>126</h>
+      <x>215</x>
+      <y>625</y>
+      <w>170</w>
+      <h>105</h>
     </coordinates>
-    <panel_attributes>arc
+    <panel_attributes>Arc
 --
 - posX:int
 - posY:int
 - alpha1:float
 - alpha2:float
 --
-+ draw(g:Graphics2D,coul:Color)</panel_attributes>
++ Arc(x:int,y:int,nalpha1:float,nalpha2:float)
++ draw(g:Graphics2D,coul:Color)
++ toString():String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>282</x>
-      <y>678</y>
-      <w>54</w>
-      <h>18</h>
+      <x>380</x>
+      <y>675</y>
+      <w>45</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
@@ -533,10 +540,10 @@ TODO
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>432</y>
-      <w>18</w>
-      <h>198</h>
+      <x>415</x>
+      <y>470</y>
+      <w>15</w>
+      <h>165</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=Black
@@ -549,10 +556,10 @@ m2=1
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>492</x>
-      <y>138</y>
-      <w>126</w>
-      <h>114</h>
+      <x>555</x>
+      <y>135</y>
+      <w>105</w>
+      <h>95</h>
     </coordinates>
     <panel_attributes>/comportement/
 --
@@ -566,25 +573,25 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>246</y>
-      <w>18</w>
-      <h>72</h>
+      <x>625</x>
+      <y>225</y>
+      <w>15</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=Black
 m1=1
 m2=1
 </panel_attributes>
-    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;280.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>642</x>
-      <y>138</y>
-      <w>126</w>
-      <h>114</h>
+      <x>680</x>
+      <y>135</y>
+      <w>105</w>
+      <h>95</h>
     </coordinates>
     <panel_attributes>compSuiviChemin
 --
@@ -598,10 +605,10 @@ m2=1
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>402</x>
-      <y>0</y>
-      <w>126</w>
-      <h>114</h>
+      <x>480</x>
+      <y>20</y>
+      <w>105</w>
+      <h>95</h>
     </coordinates>
     <panel_attributes>compAleatoire
 --
@@ -615,10 +622,10 @@ m2=1
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>552</x>
-      <y>0</y>
-      <w>126</w>
-      <h>114</h>
+      <x>605</x>
+      <y>20</y>
+      <w>105</w>
+      <h>95</h>
     </coordinates>
     <panel_attributes>compSuiviMur
 --
@@ -632,21 +639,10 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
-      <y>108</y>
-      <w>36</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>40.0;50.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>552</x>
-      <y>108</y>
-      <w>18</w>
-      <h>42</h>
+      <x>560</x>
+      <y>110</y>
+      <w>15</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
@@ -654,12 +650,88 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>612</x>
-      <y>180</y>
-      <w>42</w>
-      <h>18</h>
+      <x>605</x>
+      <y>110</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>655</x>
+      <y>170</y>
+      <w>35</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>720</x>
+      <y>465</y>
+      <w>360</w>
+      <h>415</h>
+    </coordinates>
+    <panel_attributes>Piece
+--
+bg=White</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>185</x>
+      <y>580</y>
+      <w>510</w>
+      <h>295</h>
+    </coordinates>
+    <panel_attributes>Geometrie
+--
+bg=White</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>180</x>
+      <y>245</y>
+      <w>515</w>
+      <h>315</h>
+    </coordinates>
+    <panel_attributes>Hardware
+--
+bg=White</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>455</x>
+      <y>0</y>
+      <w>360</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>Logique
+--
+bg=White</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>720</x>
+      <y>255</y>
+      <w>360</w>
+      <h>205</h>
+    </coordinates>
+    <panel_attributes>Simulateur
+--
+bg=White</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

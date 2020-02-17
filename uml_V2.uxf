@@ -124,10 +124,11 @@
     </coordinates>
     <panel_attributes>/Capteur/
 --
-- robot:Robot
-- forme:Forme
+# robot:Robot
+# forme:Forme
 --
 + Capteur(r:Robot,f:Forme)
+# UpdatePos(posX:int,posY:int)
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -374,7 +375,8 @@ m2=1
 --
 + intersect(f:Forme):boolean
 /+ draw(g:Graphics2D,coul:Color)/
-/+toString():String/
+/+ toString():String/
+/+ move(posX:int,posY:int)/
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -395,7 +397,8 @@ m2=1
 --
 + Rectangle(x:int,y:int,len:int,hei:int)
 + draw(g:Graphics2D,coul:Color)
-+ toString():String</panel_attributes>
++ toString():String
++ move(posX:int,posY:int)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -430,7 +433,8 @@ m2=1
 --
 + Cercle(x:int,y:int,nrayon:int)
 + draw(g:Graphics2D,coul:Color)
-+ toString():String</panel_attributes>
++ toString():String
++ move(posX:int,posY:int)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -491,7 +495,8 @@ TODO
 --
 + Polygone()
 + draw(g:Graphics2D,coul:Color)
-+ toString():String</panel_attributes>
++ toString():String
++ move(posX:int,posY:int)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -522,7 +527,8 @@ TODO
 --
 + Arc(x:int,y:int,nalpha1:float,nalpha2:float)
 + draw(g:Graphics2D,coul:Color)
-+ toString():String</panel_attributes>
++ toString():String
++ move(posX:int,posY:int)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

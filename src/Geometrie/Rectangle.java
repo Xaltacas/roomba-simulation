@@ -1,9 +1,9 @@
 package Geometrie;
 
-public class Rectangle {
+public class Rectangle extends Forme{
 
-	int posX,posY;
-	int lenght,height;
+	private int posX,posY;
+	private int lenght,height;
 	
 	public Rectangle(int x, int y, int len, int hei){
 		this.posX = x;
@@ -18,5 +18,10 @@ public class Rectangle {
 	
 	public void draw(){
 		//TODO
+	}
+	
+	public void move(int nposX, int nposY) {
+		this.posX = nposX;
+		this.posY = nposY;
 	}
 }

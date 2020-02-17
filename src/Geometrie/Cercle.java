@@ -2,8 +2,9 @@ package Geometrie;
 
 public class Cercle extends Forme {
 	
-	int posX,posY,rayon;
-		
+	private int posX,posY;
+	private int rayon;
+	
 	public Cercle(int x, int y, int nrayon){
 		this.posX = x;
 		this.posY = y;
@@ -18,4 +19,9 @@ public class Cercle extends Forme {
 		//TODO
 	}
 
+	public void move(int nposX, int nposY) {
+		this.posX = nposX;
+		this.posY = nposY;
+	}
+	
 }

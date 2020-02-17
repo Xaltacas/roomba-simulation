@@ -1,8 +1,9 @@
 package Geometrie;
 
 public class Arc extends Forme{
-	int posX,posY;
-	float alpha1,alpha2;
+	
+	private int posX,posY;
+	private float alpha1,alpha2;
 	
 	public Arc(int x, int y, float nalpha1, float nalpha2){
 		this.posX = x;
@@ -17,5 +18,10 @@ public class Arc extends Forme{
 	
 	public void draw(){
 		//TODO
+	}
+	
+	public void move(int nposX, int nposY) {
+		this.posX = nposX;
+		this.posY = nposY;
 	}
 }

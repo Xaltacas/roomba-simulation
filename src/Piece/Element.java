@@ -8,9 +8,9 @@ public abstract class Element {
 
 	//attributs
 	
-	private Color c;
-	private Forme forme;
-	private boolean isSolid;
+	protected Color c;
+	protected Forme forme;
+	protected boolean isSolid;
 	
 	// Constructeur
 	
@@ -20,6 +20,6 @@ public abstract class Element {
 	}
 	
 	public abstract String toString();
-	public abstract void draw(Graphics2D g);
+	public abstract void draw(Graphics g);
 	
 }

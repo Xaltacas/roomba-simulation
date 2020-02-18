@@ -8,14 +8,11 @@ public class Tache extends Element {
 
 	Tache(Color nc, Forme nforme){
 		super (nc,nforme);
+		isSolid = false;
 	}
 	
 	public String toString() {
 		return ("la tache est de forme" + this.forme.toString() );
-	}
-	
-	public void draw(Graphics2D g) {
-		
 	}
 	
 	public void aspirer () { // passe la tache en blanc

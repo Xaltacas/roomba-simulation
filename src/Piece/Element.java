@@ -20,6 +20,5 @@ public abstract class Element {
 	}
 	
 	public abstract String toString();
-	public abstract void draw(Graphics g);
 	
 }

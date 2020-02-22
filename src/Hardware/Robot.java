@@ -15,7 +15,7 @@ public class Robot {
 	private Capteur sal;
 	private Comportement comp;
 	
-	public Robot(int ndiametre, int nposX,int nposY, Environement nenv, Comportement ncomp) {
+	public Robot(int ndiametre, int nposX, int nposY, Environement nenv, Comportement ncomp) {
 		this.diametre = ndiametre;
 		this.posX = nposX;
 		this.posY = nposY;
@@ -36,10 +36,6 @@ public class Robot {
 	
 	public int getPosY() {
 		return this.posY;
-	}
-	
-	public void draw() {
-		//TODO
 	}
 	
 	public String toString(){

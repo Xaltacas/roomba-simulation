@@ -15,14 +15,23 @@ public class Cercle extends Forme {
 		return "Cercle de centre ["+posX+","+posY+"] et de rayon" + rayon;
 	}
 	
-	public void draw(){
-		//TODO
+	public int getPosX() {
+		return this.posX;
+	}
+	
+	public int getPosY() {
+		return this.posY;
+	}
+	
+	public int getRayon() {
+		return this.rayon;
 	}
 
 	public void move(int nposX, int nposY) {
 		this.posX = nposX;
 		this.posY = nposY;
 	}
+	
 	
 	
 	

@@ -24,4 +24,6 @@ public class Cercle extends Forme {
 		this.posY = nposY;
 	}
 	
+	
+	
 }

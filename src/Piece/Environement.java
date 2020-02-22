@@ -6,16 +6,17 @@ import Hardware.Robot;
 public class Environement {
  
 	// attributs 
-	protected Robot rob;
-	protected ArrayList<Element> elems;
-	protected int sizeX;
-	protected int sizeY;
+	private Robot rob;
+	private ArrayList<Element> elems;
+	private int sizeX;
+	private int sizeY;
 	
 	// constructeur 
 	
-	Environement(int nsizeX, int nsizeY){
+	 public Environement(int nsizeX, int nsizeY){
 		this.sizeX=nsizeX;
 		this.sizeY=nsizeY;
+		this.elems = new ArrayList<Element>();
 	}
 	
 	//méthodes 
@@ -25,6 +26,7 @@ public class Environement {
 	
 	public void addElem(Element e){
 		this.elems.add(e);
+		System.out.println("element ajouté!");
 	}
 	
 	public int getSizeX() {

@@ -12,5 +12,5 @@ public abstract class Forme {
 		//TODO	
 		return true;
 	}
-
+	
 }

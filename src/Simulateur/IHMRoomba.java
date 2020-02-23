@@ -3,11 +3,14 @@ import java.awt.*;
 import javax.swing.*;
 import Piece.Environement;
 import Piece.Element;
+import Geometrie.Cercle;
 public class IHMRoomba extends JPanel {
 	
 	//Attribut
 	private Environement env;
-	//private JFrame ma_fenetre;
+	private int prev_x;
+	private int prev_y;
+	
 	
 	//Constructeur 
 	
@@ -30,20 +33,31 @@ public class IHMRoomba extends JPanel {
 	public void paint(Graphics g) {
 		super.paint(g);
 		Graphics2D g2 = (Graphics2D) g;
-		for (int i =0; i<env.getElems().size();i++) {
+		
+		for (int i =0; i<env.getElems().size();i++) { // ajoute les éléments 
+			
 			g2.setColor(env.getElems().get(i).getColor());
-			System.out.println(env.getElems().get(i));
-			g2.fillOval(100*i, 100*i, 50, 50);
+			
+			if(env.getElems().get(i).getForme() instanceof Cercle) {
+				Cercle ncercle = (Cercle) env.getElems().get(i).getForme();
+				g2.fillOval(ncercle.getPosX(),ncercle.getPosY(), ncercle.getRayon(),ncercle.getRayon());
+			}
+			
+			else if (env.getElems().get(i).getForme() instanceof Geometrie.Rectangle) {
+				Geometrie.Rectangle nrect = (Geometrie.Rectangle) env.getElems().get(i).getForme();
+				g2.fillRect(nrect.getPosX(),nrect.getPosY(), nrect.getLength(),nrect.getHeight());
+			}
+			
+			g2.setColor(Color.black);
+			g2.fillRect(prev_x,prev_y,34,34);
+			g2.setColor(Color.red);
+			g2.fillOval(env.getRobot().getPosX(),env.getRobot().getPosY(), 34, 34);
+			g2.dispose();
+			prev_x=env.getRobot().getPosX();
+			prev_y=env.getRobot().getPosY();
+			
 		}
-		//g2.setColor(Color.black);
-		//g2.fillOval(100, 100, 40, 40);
-		/*g2.fillRect(prev_x,prev_y,40,40);
-		g2.setColor(Color.red);
-		g2.fillOval(x, y, 40, 40);
-		g2.dispose();
-		prev_x=x;
-		prev_y=y;
-		g2.fillOval(20,20,75,75);*/
+		
 	}
 	
 	

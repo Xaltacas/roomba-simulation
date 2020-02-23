@@ -15,7 +15,7 @@ public abstract class Element {
 	
 	// Constructeur
 	
-	Element (Color nc, Cercle nforme){
+	Element (Color nc, Forme nforme){
 		this.c = nc;
 		this.forme = nforme;
 	}
@@ -26,6 +26,7 @@ public abstract class Element {
 	public Forme getForme(){
 		return this.forme;
 	}
+	
 	
 	public abstract String toString();
 	

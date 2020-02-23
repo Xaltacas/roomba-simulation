@@ -37,6 +37,10 @@ public class Environement {
 		return this.sizeY;
 	}
 	
+	public Robot getRobot() {
+		return this.rob;
+	}
+	
 	public ArrayList<Element> getElems(){
 		return elems;
 	}

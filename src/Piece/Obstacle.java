@@ -6,7 +6,7 @@ import Geometrie.Forme;
 
 public class Obstacle extends Element {
 
-	Obstacle (Color nc, Cercle nforme){
+	public Obstacle (Color nc, Forme nforme){
 		super (nc,nforme);
 		isSolid = true;
 	}

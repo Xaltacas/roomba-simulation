@@ -32,7 +32,7 @@ public class Rectangle extends Forme{
 		return this.height;
 	}
 	
-	public void move(int nposX, int nposY) {
+	public void move(int nposX, int nposY, double alpha) {
 		this.posX = nposX;
 		this.posY = nposY;
 	}

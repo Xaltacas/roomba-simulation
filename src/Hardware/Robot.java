@@ -1,48 +1,63 @@
 package Hardware;
 import Piece.Environement;
 import Logique.Comportement;
+import Logique.Posture;
 
 public class Robot {
 
 	private int diametre;
-	private int posX;
-	private int posY;
-	private float alpha;
 	private Environement env;
-	private Capteur contdroit;
-	private Capteur contface;
-	private Capteur contmilieu;
-	private Capteur sal;
+	private CapteurCollision contdroit;
+	private CapteurCollision contface;
+	private CapteurCollision contgauche;
+	private CapteurSalete sal;
 	private Comportement comp;
+	private Posture p;
+	
 	
 	public Robot(int ndiametre, int nposX, int nposY, Environement nenv, Comportement ncomp) {
 		this.diametre = ndiametre;
-		this.posX = nposX;
-		this.posY = nposY;
 		this.env = nenv;
-		
 		this.comp = ncomp;
 		
+		p = new Posture(nposX,nposY,0);
+		
+		this.contdroit = new CapteurCollision(this, this.diametre/2, 3/2*Math.PI, 11/6*Math.PI);
+		this.contface = new CapteurCollision(this, this.diametre/2, 11/6*Math.PI, 1/6*Math.PI);
+		this.contgauche = new CapteurCollision(this, this.diametre/2, 1/6*Math.PI,  1/2*Math.PI);
+		
+
+		
 	}
 	
 	
-	public void move() {
-		//TODO
+	public void updatePos() {
+		comp.move(this);
 	}
 	
-	public int getPosX() {
-		return this.posX;
+	public void move(int d_l, int d_r,int ecartRoues) {
+		p.move(d_l, d_r, ecartRoues);
 	}
 	
-	public int getPosY() {
-		return this.posY;
-	}
+	public int getPosX() {return this.p.getX();}
 	
-	public String toString(){
-		return "robot en ["+posX+","+posY+"]";
-	}
-	public void setComportement() {
-		//TODO
-	}
+	public int getPosY() {return this.p.getY();}
 	
+	public int getDiametre() {return this.diametre;}
+	
+	public double getAlpha() {return this.p.getTheta();}
+	
+	public Environement getEnv() {return this.env;}
+	
+	public boolean cdState() {return contdroit.collide();}
+	
+	public boolean cfState() {return contface.collide();}
+	
+	public boolean cgState() {return contgauche.collide();}
+	
+	public String toString(){return "robot en ["+p.getX()+","+p.getY()+"]";}
+	
+	public void setComportement(Comportement ncomp) {
+		this.comp = ncomp;
+	}
 }

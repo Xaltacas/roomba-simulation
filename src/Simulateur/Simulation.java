@@ -3,8 +3,8 @@ import java.awt.*;
 import javax.swing.*;
 import Piece.*;
 import Geometrie.*;
+import Hardware.*;
 import Logique.*;
-import Logique.Comportement;
 
 
 public class Simulation {
@@ -30,7 +30,8 @@ public class Simulation {
 		env.addElem(t2);
 		env.addElem(o1);
 		
-		Robot r = new Robot (34,200,200,env, new Comportement ncomp());
+		Hardware.Robot r = new Hardware.Robot (34,200,200,env, new CompAleatoire());
+		env.addRobot(r);
 		JFrame ma_fenetre = new JFrame();
 		ma_fenetre.setTitle("roomba simulation");
 		//ma_fenetre.setLocationRelativeTo(null);

@@ -1,5 +1,6 @@
 package Hardware;
 import Geometrie.Forme;
+import Piece.Element;
 
 public abstract class Capteur {
 	
@@ -12,7 +13,7 @@ public abstract class Capteur {
 	}
 	
 	protected void UpdatePos() {
-		this.forme.move(robot.getPosX(),robot.getPosY());
+		this.forme.move(robot.getPosX(),robot.getPosY(),robot.getAlpha());
 	}
 
 }

@@ -5,7 +5,7 @@ public abstract class Forme {
 	
 	public abstract String toString();
 	
-	public abstract void move(int posX, int posY);
+	public abstract void move(int posX, int posY, double alpha);
 	
 	public boolean intersect(Forme f){
 		if (this instanceof Cercle && f instanceof Cercle) {

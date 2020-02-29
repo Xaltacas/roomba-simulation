@@ -27,7 +27,7 @@ public class Cercle extends Forme {
 		return this.rayon;
 	}
 
-	public void move(int nposX, int nposY) {
+	public void move(int nposX, int nposY,double alpha) {
 		this.posX = nposX;
 		this.posY = nposY;
 	}

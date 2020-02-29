@@ -3,9 +3,9 @@ package Geometrie;
 public class Arc extends Forme{
 	
 	private int posX, posY, rayon;
-	private float alpha1, alpha2;
+	private double alpha1, alpha2;
 	
-	public Arc(int x, int y, int nrayon, float nalpha1, float nalpha2){
+	public Arc(int x, int y, int nrayon, double nalpha1, double nalpha2){
 		this.posX = x;
 		this.posY = y;
 		this.rayon = nrayon;
@@ -29,16 +29,20 @@ public class Arc extends Forme{
 		return this.rayon;
 	}
 	
-	public float getAlpha1() {
+	public double getAlpha1() {
 		return this.alpha1;
 	}
 	
-	public float getAlpha2() {
+	public double getAlpha2() {
 		return this.alpha2;
 	}
 	
-	public void move(int nposX, int nposY) {
+	public void move(int nposX, int nposY,double alpha) {
 		this.posX = nposX;
 		this.posY = nposY;
+		this.alpha1 += alpha;
+		this.alpha1 %= 2*Math.PI;
+		this.alpha2 += alpha;
+		this.alpha2 %= 2*Math.PI;
 	}
 }

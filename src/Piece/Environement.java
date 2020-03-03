@@ -1,12 +1,13 @@
 package Piece;
 import java.util.ArrayList;
+import Simulateur.Robot2;
 import Piece.Element;
 import Hardware.Robot;
 
 public class Environement {
  
 	// attributs 
-	private Robot rob;
+	private Robot2 rob;
 	private ArrayList<Element> elems;
 	private int sizeX;
 	private int sizeY;
@@ -20,7 +21,7 @@ public class Environement {
 	}
 	
 	//méthodes 
-	public void addRobot(Robot r){
+	public void addRobot(Robot2 r){
 		this.rob = r;
 	}
 	
@@ -37,7 +38,7 @@ public class Environement {
 		return this.sizeY;
 	}
 	
-	public Robot getRobot() {
+	public Robot2 getRobot() {
 		return this.rob;
 	}
 	

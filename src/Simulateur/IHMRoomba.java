@@ -48,13 +48,16 @@ public class IHMRoomba extends JPanel {
 				g2.fillRect(nrect.getPosX(),nrect.getPosY(), nrect.getLength(),nrect.getHeight());
 			}
 			
-			g2.setColor(Color.black);
+			g2.setColor(Color.red);
+			g2.fillOval(env.getRobot().getPosX(),env.getRobot().getPosY(), 34, 34);
+			
+			/*g2.setColor(Color.black);
 			g2.fillRect(prev_x,prev_y,34,34);
 			g2.setColor(Color.red);
 			g2.fillOval(env.getRobot().getPosX(),env.getRobot().getPosY(), 34, 34);
 			g2.dispose();
 			prev_x=env.getRobot().getPosX();
-			prev_y=env.getRobot().getPosY();
+			prev_y=env.getRobot().getPosY();*/
 			
 		}
 		

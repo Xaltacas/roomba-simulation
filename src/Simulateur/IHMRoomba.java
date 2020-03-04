@@ -40,16 +40,16 @@ public class IHMRoomba extends JPanel {
 			
 			if(env.getElems().get(i).getForme() instanceof Cercle) {
 				Cercle ncercle = (Cercle) env.getElems().get(i).getForme();
-				g2.fillOval(ncercle.getPosX(),ncercle.getPosY(), ncercle.getRayon(),ncercle.getRayon());
+				g2.fillOval((int)ncercle.getPosX()- (int) ncercle.getRayon(),(int)ncercle.getPosY() - (int) ncercle.getRayon(),(int) ncercle.getRayon()*2,(int)ncercle.getRayon()*2);
 			}
 			
 			else if (env.getElems().get(i).getForme() instanceof Geometrie.Rectangle) {
 				Geometrie.Rectangle nrect = (Geometrie.Rectangle) env.getElems().get(i).getForme();
-				g2.fillRect(nrect.getPosX(),nrect.getPosY(), nrect.getLength(),nrect.getHeight());
+				g2.fillRect((int)nrect.getPosX(),(int)nrect.getPosY(),(int) nrect.getLength(),(int)nrect.getHeight());
 			}
 			
 			g2.setColor(Color.red);
-			g2.fillOval(env.getRobot().getPosX(),env.getRobot().getPosY(), 34, 34);
+			g2.fillOval((int)env.getRobot().getPosX() - env.getRobot().getDiametre()/2,(int)env.getRobot().getPosY()- env.getRobot().getDiametre()/2, env.getRobot().getDiametre(), env.getRobot().getDiametre());
 			
 			/*g2.setColor(Color.black);
 			g2.fillRect(prev_x,prev_y,34,34);

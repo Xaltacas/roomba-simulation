@@ -2,10 +2,10 @@ package Geometrie;
 
 public class Cercle extends Forme {
 	
-	private int posX,posY;
-	private int rayon;
+	private double posX,posY;
+	private double rayon;
 	
-	public Cercle(int x, int y, int nrayon){
+	public Cercle(double x, double y, double nrayon){
 		this.posX = x;
 		this.posY = y;
 		this.rayon = nrayon;
@@ -15,21 +15,42 @@ public class Cercle extends Forme {
 		return "Cercle de centre ["+posX+","+posY+"] et de rayon" + rayon;
 	}
 	
-	public int getPosX() {
+	public double getPosX() {
 		return this.posX;
 	}
 	
-	public int getPosY() {
+	public double getPosY() {
 		return this.posY;
 	}
 	
-	public int getRayon() {
+	public double getRayon() {
 		return this.rayon;
 	}
 
-	public void move(int nposX, int nposY,double alpha) {
+	public void move(double nposX, double nposY,double alpha) {
 		this.posX = nposX;
 		this.posY = nposY;
+	}
+	
+	public boolean intersect(Cercle c1) {
+		return ((c1.getPosX() - posX) * (c1.getPosX() - posX)+
+				(c1.getPosY() - posY) * (c1.getPosY() - posY)
+				<= (c1.getRayon() + rayon) * (c1.getRayon() + rayon));
+	}
+	
+	public boolean intersect(Rectangle r) {
+		double nearestX = Math.max(r.getPosX(), Math.min(posX, r.getPosX() + r.getLength()));
+		double nearestY = Math.max(r.getPosY(), Math.min(posY, r.getPosY() + r.getHeight()));
+		
+		double deltaX = posX - nearestX;
+		double deltaY = posY - nearestY;
+		
+		return (deltaX * deltaX + deltaY * deltaY) <= (rayon*rayon);
+	}
+	
+	public  boolean intersect(Arc a) {
+		//todo
+		return true;
 	}
 	
 	

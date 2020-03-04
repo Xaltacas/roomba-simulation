@@ -35,13 +35,13 @@ public class Robot {
 		comp.move(this);
 	}
 	
-	public void move(int d_l, int d_r,int ecartRoues) {
+	public void move(double d_l, double d_r,double ecartRoues) {
 		p.move(d_l, d_r, ecartRoues);
 	}
 	
-	public int getPosX() {return this.p.getX();}
+	public double getPosX() {return this.p.getX();}
 	
-	public int getPosY() {return this.p.getY();}
+	public double getPosY() {return this.p.getY();}
 	
 	public int getDiametre() {return this.diametre;}
 	

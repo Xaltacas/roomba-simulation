@@ -716,9 +716,9 @@ bg=White</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>234</x>
+      <x>306</x>
       <y>0</y>
-      <w>624</w>
+      <w>552</w>
       <h>300</h>
     </coordinates>
     <panel_attributes>Logique

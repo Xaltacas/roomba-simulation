@@ -2,10 +2,10 @@ package Geometrie;
 
 public class Arc extends Forme{
 	
-	private int posX, posY, rayon;
+	private double posX, posY, rayon;
 	private double alpha1, alpha2;
 	
-	public Arc(int x, int y, int nrayon, double nalpha1, double nalpha2){
+	public Arc(double x, double y, double nrayon, double nalpha1, double nalpha2){
 		this.posX = x;
 		this.posY = y;
 		this.rayon = nrayon;
@@ -17,15 +17,15 @@ public class Arc extends Forme{
 		return "arc de centre ["+posX+","+posY+"] de rayon "+rayon+" et de delimiteurs ["+alpha1+","+alpha2+"]";
 	}
 	
-	public int getPosX() {
+	public double getPosX() {
 		return this.posX;
 	}
 	
-	public int getPosY() {
+	public double getPosY() {
 		return this.posY;
 	}	
 	
-	public int getRayon() {
+	public double getRayon() {
 		return this.rayon;
 	}
 	
@@ -37,12 +37,27 @@ public class Arc extends Forme{
 		return this.alpha2;
 	}
 	
-	public void move(int nposX, int nposY,double alpha) {
+	public void move(double nposX, double nposY,double alpha) {
 		this.posX = nposX;
 		this.posY = nposY;
 		this.alpha1 += alpha;
 		this.alpha1 %= 2*Math.PI;
 		this.alpha2 += alpha;
 		this.alpha2 %= 2*Math.PI;
+	}
+	
+	public boolean intersect(Cercle c) {
+		//todo
+		return true;
+	}
+	
+	public boolean intersect(Rectangle r) {
+		//todo
+		return true;
+	}
+	
+	public  boolean intersect(Arc a) {
+		//todo
+		return true;
 	}
 }

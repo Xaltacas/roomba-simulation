@@ -7,7 +7,7 @@ import Hardware.Robot;
 public class Environement {
  
 	// attributs 
-	private Robot2 rob;
+	private Robot rob;
 	private ArrayList<Element> elems;
 	private int sizeX;
 	private int sizeY;
@@ -21,7 +21,7 @@ public class Environement {
 	}
 	
 	//méthodes 
-	public void addRobot(Robot2 r){
+	public void addRobot(Robot r){
 		this.rob = r;
 	}
 	
@@ -38,7 +38,7 @@ public class Environement {
 		return this.sizeY;
 	}
 	
-	public Robot2 getRobot() {
+	public Robot getRobot() {
 		return this.rob;
 	}
 	

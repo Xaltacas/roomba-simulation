@@ -5,7 +5,7 @@ package Logique;
  */
 public class Posture implements Cloneable
 {
-  private int x, y;
+  private double x, y;
   private double theta;
   /**
    * Constructeur
@@ -16,7 +16,7 @@ public class Posture implements Cloneable
    * @param y Coordonnee y initiale
    * @param theta Angle initial
    */
-  public Posture(int x, int y, double theta)
+  public Posture(double x, double y, double theta)
   {
     this.x = x;
     this.y = y;
@@ -24,8 +24,8 @@ public class Posture implements Cloneable
   }
   
   // Accesseurs
-  public int getX() { return this.x; }
-  public int getY() { return this.y; }
+  public double getX() { return this.x; }
+  public double getY() { return this.y; }
   public double getTheta() { return theta; }
   public Object clone() { return new Posture(x, y, theta); }
 
@@ -37,8 +37,8 @@ public class Posture implements Cloneable
   {
     double x_ = Math.cos(alpha) * getX() - Math.sin(alpha) * getY();
     double y_ = Math.cos(alpha) * getY() + Math.sin(alpha) * getX();
-    x = (int) x_;
-    y = (int) y_;
+    x =  x_;
+    y =  y_;
     theta = normalize_angle(alpha + theta);
     return this;
   }
@@ -50,8 +50,7 @@ public class Posture implements Cloneable
    * @param d_r distance parcourue par la roue droite
    * @param ecartRoues distance entre les deux roues
    */
-  public Posture move(int d_l, int d_r,
-		      int ecartRoues)
+  public Posture move(double d_l, double d_r, double ecartRoues)
   {
     double alpha = (double)(d_r - d_l) / ecartRoues;
     Posture p = null;
@@ -60,14 +59,14 @@ public class Posture implements Cloneable
 	double r = (d_l / alpha) + (double) ecartRoues / 2;
 	double d_x = (Math.cos(alpha) - 1) * r;
 	double d_y = Math.sin(alpha) * r;
-	p = new Posture((int)d_x,(int) d_y, alpha);
+	p = new Posture(d_x, d_y, alpha);
 	p.rotate(this.getTheta() - Math.PI / 2);
 	p.theta = alpha;
       }
     else
       {
-	p = new Posture((int) (d_l * Math.cos(this.getTheta())),
-					(int) (d_l * Math.sin(this.getTheta())),
+	p = new Posture((d_l * Math.cos(this.getTheta())),
+					(d_l * Math.sin(this.getTheta())),
 						0);
       }
 

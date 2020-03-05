@@ -4,6 +4,7 @@ import javax.swing.*;
 import Piece.Environement;
 import Piece.Element;
 import Geometrie.Cercle;
+import  java.lang.*;
 public class IHMRoomba extends JPanel {
 	
 	//Attribut
@@ -50,6 +51,23 @@ public class IHMRoomba extends JPanel {
 			
 			g2.setColor(Color.red);
 			g2.fillOval((int)env.getRobot().getPosX() - env.getRobot().getDiametre()/2,(int)env.getRobot().getPosY()- env.getRobot().getDiametre()/2, env.getRobot().getDiametre(), env.getRobot().getDiametre());
+			g2.setColor(Color.black );
+			double alpha = env.getRobot().getAlpha();
+			int XA = (int)env.getRobot().getPosX();
+			int YA = (int)env.getRobot().getPosY();
+			double s = Math.sin(alpha+Math.PI/2);
+			double c = Math.cos(alpha+Math.PI/2);
+			int d = env.getRobot().getDiametre();
+			int[] X1 = {(int)(XA-c*3*d/4+d*s/4),(int)(XA-c*d/2+d*s/4),(int)(XA-c*d/2-d*s/4),(int)(XA-c*3*d/4-d*s/4)};
+			int[] Y1 = {(int)(YA-s*3*d/4-d*c/4),(int)(YA-s*d/2-d*c/4),(int)(YA-s*d/2+d*c/4),(int)(YA-s*3*d/4+d*c/4)};
+			
+			int[] X2 = {(int)(XA+c*3*d/4+d*s/4),(int)(XA+c*d/2+d*s/4),(int)(XA+c*d/2-d*s/4),(int)(XA+c*3*d/4-d*s/4)};
+			int[] Y2 = {(int)(YA+s*3*d/4-d*c/4),(int)(YA+s*d/2-d*c/4),(int)(YA+s*d/2+d*c/4),(int)(YA+s*3*d/4+d*c/4)};
+			
+			System.out.println("alpha degres "+ Math.toDegrees(env.getRobot().getAlpha())+ "  alpha rad " + alpha);
+			g2.fillPolygon(X1, Y1, 4);
+			g2.fillPolygon(X2, Y2, 4);
+			//g2.fillOval((int)(XA-Math.cos(alpha+Math.PI/2)*env.getRobot().getDiametre()/2),(int)(YA-Math.sin(alpha+Math.PI/2)*env.getRobot().getDiametre()/2),env.getRobot().getDiametre()/3,env.getRobot().getDiametre()/3);
 			
 			/*g2.setColor(Color.black);
 			g2.fillRect(prev_x,prev_y,34,34);

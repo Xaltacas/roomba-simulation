@@ -27,6 +27,9 @@ public abstract class Element {
 		return this.forme;
 	}
 	
+	public boolean getIsSolid() {
+		return this.isSolid;
+	}
 	
 	public abstract String toString();
 	

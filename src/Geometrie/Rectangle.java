@@ -13,7 +13,7 @@ public class Rectangle extends Forme{
 	}
 	
 	public String toString(){
-		return "rectangle de coin ["+posX+","+posY+"] et de hauteur "+height+" et de longeur"+length;
+		return "rectangle de coin ["+posX+","+posY+"] et de hauteur "+height+" et de longeur "+length;
 	}
 	
 	public double getPosX() {
@@ -58,11 +58,12 @@ public class Rectangle extends Forme{
 		double nearestX = Math.max(posX, Math.min(a.getPosX(), posX + length));
 		double nearestY = Math.max(posY, Math.min(a.getPosY(), posY + height));
 		
-		if(((posX - nearestX) * (posX - nearestX) + (posY - nearestY) * (posY - nearestY))
+		if(((a.getPosX() - nearestX) * (a.getPosX() - nearestX) + (a.getPosY() - nearestY) * (a.getPosY() - nearestY))
 				<= (a.getRayon()*a.getRayon())) {
-			double angle = Math.atan2(posY - nearestY,posX-nearestX) + Math.PI;
-			double a1 = (a.getAlphaRef()+a.getAlpha1())%2*Math.PI;
-			double a2 = (a.getAlphaRef()+a.getAlpha2())%2*Math.PI;
+			double angle = Math.atan2((a.getPosY() - nearestY),-(a.getPosX()-nearestX));
+			angle = normalizeAngle(angle);
+			double a1 = normalizeAngle(a.getAlphaRef()+a.getAlpha1());
+			double a2 = normalizeAngle(a.getAlphaRef()+a.getAlpha2());
 			
 			if((angle > a1 && angle < a2) || (a2 < a1 && ( angle > a1 || angle < a2)))
 				return true;

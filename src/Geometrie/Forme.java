@@ -32,4 +32,16 @@ public abstract class Forme {
 		return true;
 	}
 	
+	protected double normalizeAngle(double angle) {
+		double res = angle;
+		
+		while(res < 0) {
+			res += Math.PI*2;
+		}
+		while(res >= 2*Math.PI) {
+			res -= Math.PI*2;
+		}
+		return res;
+	}
+	
 }

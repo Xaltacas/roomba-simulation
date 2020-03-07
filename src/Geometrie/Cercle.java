@@ -12,7 +12,7 @@ public class Cercle extends Forme {
 	}
 	
 	public String toString(){
-		return "Cercle de centre ["+posX+","+posY+"] et de rayon" + rayon;
+		return "Cercle de centre ["+posX+","+posY+"] et de rayon " + rayon;
 	}
 	
 	public double getPosX() {
@@ -51,9 +51,10 @@ public class Cercle extends Forme {
 	public  boolean intersect(Arc a) {
 		if((a.getPosX() - posX) * (a.getPosX() - posX)+(a.getPosY() - posY) * (a.getPosY() - posY)
 		   <= (a.getRayon() + rayon) * (a.getRayon() + rayon)) {
-			double angle = Math.atan2(posY - a.getPosY(),posX - a.getPosX()) + Math.PI;
-			double a1 = (a.getAlphaRef()+a.getAlpha1())%2*Math.PI;
-			double a2 = (a.getAlphaRef()+a.getAlpha2())%2*Math.PI;
+			double angle = Math.atan2(-(posY - a.getPosY()),posX - a.getPosX());
+			angle = normalizeAngle(angle);
+			double a1 = normalizeAngle(a.getAlphaRef()+a.getAlpha1());
+			double a2 = normalizeAngle(a.getAlphaRef()+a.getAlpha2());
 			
 			if((angle > a1 && angle < a2) || (a2 < a1 && ( angle > a1 || angle < a2)))
 				return true;

@@ -11,6 +11,7 @@ public class IHMRoomba extends JPanel {
 	private Environement env;
 	private int prev_x;
 	private int prev_y;
+
 	
 	
 	//Constructeur 
@@ -18,15 +19,6 @@ public class IHMRoomba extends JPanel {
 	IHMRoomba (Environement nenv){
 		this.env = nenv;
 	
-		/*this.ma_fenetre = new JFrame();
-		this.ma_fenetre.setTitle("roomba simulation");
-		this.ma_fenetre.setSize(env.getSizeX(),env.getSizeY());
-		this.ma_fenetre.setLocationRelativeTo(null);
-		this.ma_fenetre.setResizable(false);
-		this.ma_fenetre.setBackground(Color.white);
-		this.ma_fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.ma_fenetre.setVisible(true);*/
-		
 	}
 	
 	
@@ -70,9 +62,11 @@ public class IHMRoomba extends JPanel {
 			int[] X2 = {(int)(XA+c*13*d/24+d*s/4),(int)(XA+c*d/3+d*s/4),(int)(XA+c*d/3-d*s/4),(int)(XA+c*13*d/24-d*s/4)};
 			int[] Y2 = {(int)(YA+s*13*d/24-d*c/4),(int)(YA+s*d/3-d*c/4),(int)(YA+s*d/3+d*c/4),(int)(YA+s*13*d/24+d*c/4)};
 			
-			System.out.println("alpha degres "+ Math.toDegrees(env.getRobot().getAlpha())+ "  alpha rad " + alpha);
+			//System.out.println("alpha degres "+ Math.toDegrees(env.getRobot().getAlpha())+ "  alpha rad " + alpha);
 			g2.fillPolygon(X1, Y1, 4);
 			g2.fillPolygon(X2, Y2, 4);
+			g2.drawLine(XA, YA, (int)(XA+d/2*s), (int)(YA-d/2*c));
+			
 			//g2.fillOval((int)(XA-Math.cos(alpha+Math.PI/2)*env.getRobot().getDiametre()/2),(int)(YA-Math.sin(alpha+Math.PI/2)*env.getRobot().getDiametre()/2),env.getRobot().getDiametre()/3,env.getRobot().getDiametre()/3);
 			
 			/*g2.setColor(Color.black);

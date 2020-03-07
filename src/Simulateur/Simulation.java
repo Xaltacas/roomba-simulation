@@ -2,6 +2,7 @@ package Simulateur;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.*;
 import Piece.*;
@@ -19,24 +20,36 @@ public class Simulation implements ActionListener{
 	 * @param args
 	 */
 	static volatile private boolean attente = true;
+	static volatile private boolean pause = false;
+	static JButton bouton = new JButton("Start");
+	static JButton boutonStop = new JButton("Pause");
 	
 	public void actionPerformed (ActionEvent e) {
-		System.out.println("ici");
-		attente = false;
+		if (e.getSource()== bouton) { 
+			System.out.println("ici");
+			attente = false;
+		}
+		if (e.getSource()==boutonStop) {
+			if (pause == true) {
+				pause = false;
+			}else {
+				pause = true;
+			}
+		}
 	}
 	
 	public static void main(String[] args) {
-		int start = 0 ;
 		
 		Environement env = new Environement (400,400);
 		Obstacle mur1 = new Obstacle(Color.black,new Geometrie.Rectangle(0,0,400,5));
 		Obstacle mur2 = new Obstacle(Color.black,new Geometrie.Rectangle(0,0,5,400));
 		Obstacle mur3 = new Obstacle(Color.black,new Geometrie.Rectangle(395,0,5,400));
 		Obstacle mur4 = new Obstacle(Color.black,new Geometrie.Rectangle(0,395,400,5));
-		Tache t1 = new Tache (Color.green, new Cercle (200, 200, 25));
-		Tache t2 = new Tache (Color.green, new Cercle (100, 100, 50));
-		Obstacle o1 = new Obstacle (Color.black,new Cercle(300,300,25));
-		Obstacle o2 = new Obstacle (Color.black,new Cercle (200, 200, 10));
+		Tache t1 = new Tache (Color.black, new Cercle (200, 200, 25));
+		Tache t2 = new Tache (Color.black, new Cercle (100, 100, 50));
+		Tache t3 = new Tache (Color.black, new Cercle (50, 50, 20));
+		Obstacle o1 = new Obstacle (Color.LIGHT_GRAY,new Cercle(300,300,25));
+		Obstacle o2 = new Obstacle (Color.LIGHT_GRAY,new Cercle (200, 200, 10));
 		Robot2 r2 = new Robot2(34,200,200,env);
 		
 		env.addElem(mur1);
@@ -45,6 +58,7 @@ public class Simulation implements ActionListener{
 		env.addElem(mur4);
 		env.addElem(t1);
 		env.addElem(t2);
+		env.addElem(t3);
 		env.addElem(o1);
 		env.addElem(o2);
 		
@@ -53,10 +67,10 @@ public class Simulation implements ActionListener{
 		env.addRobot(r);
 		//env.addRobot(r2);
 		JFrame ma_fenetre = new JFrame();
-		JButton bouton = new JButton("Start");
 		bouton.addActionListener(new Simulation());
+		boutonStop.addActionListener(new Simulation());
 		
-	
+		
 		
 		ma_fenetre.setTitle("roomba simulation");
 		//ma_fenetre.setLocationRelativeTo(null);
@@ -72,15 +86,20 @@ public class Simulation implements ActionListener{
 		ma_fenetre.pack();
 		ma_fenetre.setVisible(true);
 		
+		System.out.println("nb taches :" + env.getNbTaches());
+		
 		while (attente) {
 			
 		}
 		bouton.setVisible(false);
+		ma_fenetre.add(boutonStop);
 		
 		// utiliser un callback pour la souris 
 		while (true) {
 			
-			
+			if (pause) {
+				
+			}else {
 			r.updatePos();
 			//r2.updatePos();
 			try {Thread.sleep(10);}
@@ -88,6 +107,7 @@ public class Simulation implements ActionListener{
 			
 			//System.out.println("posx =" + r.getPosX() + "  posy=" + r.getPosY());
 			IHM.repaint();
+			}
 		}
 	}
 

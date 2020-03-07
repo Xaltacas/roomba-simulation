@@ -1,4 +1,5 @@
 package Piece;
+import java.awt.Color;
 import java.util.ArrayList;
 import Simulateur.Robot2;
 import Piece.Element;
@@ -11,6 +12,7 @@ public class Environement {
 	private ArrayList<Element> elems;
 	private int sizeX;
 	private int sizeY;
+	private int nbTaches;
 	
 	// constructeur 
 	
@@ -50,6 +52,17 @@ public class Environement {
 		if (elems.remove(e) == false) {
 			System.out.println("l'élément à supprimer n'existe pas dans la liste");
 		}
+	}
+	public int getNbTaches () {
+		int res = 0;
+		for (int i =0; i<this.elems.size(); i++) {
+			System.out.println("ici");
+			if (this.elems.get(i).getIsSolid()== false && this.elems.get(i).getColor()!=Color.white) {
+				res++;
+				System.out.println("la");
+			}
+		}
+		return res;
 	}
 	
 	public String toString() {

@@ -35,34 +35,40 @@ public class IHMRoomba extends JPanel {
 		super.paint(g);
 		Graphics2D g2 = (Graphics2D) g;
 		
+		
 		for (int i =0; i<env.getElems().size();i++) { // ajoute les éléments 
 			
-			g2.setColor(env.getElems().get(i).getColor());
 			
 			if(env.getElems().get(i).getForme() instanceof Cercle) {
 				Cercle ncercle = (Cercle) env.getElems().get(i).getForme();
+				g2.setColor(env.getElems().get(i).getColor());
 				g2.fillOval((int)ncercle.getPosX()- (int) ncercle.getRayon(),(int)ncercle.getPosY() - (int) ncercle.getRayon(),(int) ncercle.getRayon()*2,(int)ncercle.getRayon()*2);
+				g2.setColor(Color.black );
+				g2.drawOval((int)ncercle.getPosX()- (int) ncercle.getRayon(),(int)ncercle.getPosY() - (int) ncercle.getRayon(),(int) ncercle.getRayon()*2,(int)ncercle.getRayon()*2);
 			}
 			
 			else if (env.getElems().get(i).getForme() instanceof Geometrie.Rectangle) {
 				Geometrie.Rectangle nrect = (Geometrie.Rectangle) env.getElems().get(i).getForme();
 				g2.fillRect((int)nrect.getPosX(),(int)nrect.getPosY(),(int) nrect.getLength(),(int)nrect.getHeight());
+				g2.drawRect((int)nrect.getPosX(),(int)nrect.getPosY(),(int) nrect.getLength(),(int)nrect.getHeight());
 			}
 			
 			g2.setColor(Color.red);
 			g2.fillOval((int)env.getRobot().getPosX() - env.getRobot().getDiametre()/2,(int)env.getRobot().getPosY()- env.getRobot().getDiametre()/2, env.getRobot().getDiametre(), env.getRobot().getDiametre());
 			g2.setColor(Color.black );
+			g2.drawOval((int)env.getRobot().getPosX() - env.getRobot().getDiametre()/2,(int)env.getRobot().getPosY()- env.getRobot().getDiametre()/2, env.getRobot().getDiametre(), env.getRobot().getDiametre());
 			double alpha = env.getRobot().getAlpha();
 			int XA = (int)env.getRobot().getPosX();
 			int YA = (int)env.getRobot().getPosY();
 			double s = Math.sin(alpha+Math.PI/2);
 			double c = Math.cos(alpha+Math.PI/2);
 			int d = env.getRobot().getDiametre();
-			int[] X1 = {(int)(XA-c*3*d/4+d*s/4),(int)(XA-c*d/2+d*s/4),(int)(XA-c*d/2-d*s/4),(int)(XA-c*3*d/4-d*s/4)};
-			int[] Y1 = {(int)(YA-s*3*d/4-d*c/4),(int)(YA-s*d/2-d*c/4),(int)(YA-s*d/2+d*c/4),(int)(YA-s*3*d/4+d*c/4)};
 			
-			int[] X2 = {(int)(XA+c*3*d/4+d*s/4),(int)(XA+c*d/2+d*s/4),(int)(XA+c*d/2-d*s/4),(int)(XA+c*3*d/4-d*s/4)};
-			int[] Y2 = {(int)(YA+s*3*d/4-d*c/4),(int)(YA+s*d/2-d*c/4),(int)(YA+s*d/2+d*c/4),(int)(YA+s*3*d/4+d*c/4)};
+			int[] X1 = {(int)(XA-c*13*d/24+d*s/4),(int)(XA-c*d/3+d*s/4),(int)(XA-c*d/3-d*s/4),(int)(XA-c*13*d/24-d*s/4)};
+			int[] Y1 = {(int)(YA-s*13*d/24-d*c/4),(int)(YA-s*d/3-d*c/4),(int)(YA-s*d/3+d*c/4),(int)(YA-s*13*d/24+d*c/4)};
+			
+			int[] X2 = {(int)(XA+c*13*d/24+d*s/4),(int)(XA+c*d/3+d*s/4),(int)(XA+c*d/3-d*s/4),(int)(XA+c*13*d/24-d*s/4)};
+			int[] Y2 = {(int)(YA+s*13*d/24-d*c/4),(int)(YA+s*d/3-d*c/4),(int)(YA+s*d/3+d*c/4),(int)(YA+s*13*d/24+d*c/4)};
 			
 			System.out.println("alpha degres "+ Math.toDegrees(env.getRobot().getAlpha())+ "  alpha rad " + alpha);
 			g2.fillPolygon(X1, Y1, 4);

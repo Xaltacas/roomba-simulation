@@ -1,5 +1,8 @@
 package Simulateur;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 import Piece.*;
 import Geometrie.*;
@@ -10,12 +13,21 @@ import Simulateur.Robot2;
 
 
 
-public class Simulation {
+public class Simulation implements ActionListener{
 
 	/**
 	 * @param args
 	 */
+	static volatile private boolean attente = true;
+	
+	public void actionPerformed (ActionEvent e) {
+		System.out.println("ici");
+		attente = false;
+	}
+	
 	public static void main(String[] args) {
+		int start = 0 ;
+		
 		Environement env = new Environement (400,400);
 		Obstacle mur1 = new Obstacle(Color.black,new Geometrie.Rectangle(0,0,400,5));
 		Obstacle mur2 = new Obstacle(Color.black,new Geometrie.Rectangle(0,0,5,400));
@@ -41,6 +53,11 @@ public class Simulation {
 		env.addRobot(r);
 		//env.addRobot(r2);
 		JFrame ma_fenetre = new JFrame();
+		JButton bouton = new JButton("Start");
+		bouton.addActionListener(new Simulation());
+		
+	
+		
 		ma_fenetre.setTitle("roomba simulation");
 		//ma_fenetre.setLocationRelativeTo(null);
 		ma_fenetre.setResizable(false);
@@ -50,12 +67,20 @@ public class Simulation {
 		
 		IHMRoomba IHM = new IHMRoomba(env);
 		IHM.setPreferredSize(new Dimension(env.getSizeX(),env.getSizeY()));
-		
 		ma_fenetre.setContentPane(IHM);
+		ma_fenetre.add(bouton);
 		ma_fenetre.pack();
 		ma_fenetre.setVisible(true);
 		
+		while (attente) {
+			
+		}
+		bouton.setVisible(false);
+		
+		// utiliser un callback pour la souris 
 		while (true) {
+			
+			
 			r.updatePos();
 			//r2.updatePos();
 			try {Thread.sleep(10);}

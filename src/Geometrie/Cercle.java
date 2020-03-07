@@ -32,10 +32,10 @@ public class Cercle extends Forme {
 		this.posY = nposY;
 	}
 	
-	public boolean intersect(Cercle c1) {
-		return ((c1.getPosX() - posX) * (c1.getPosX() - posX)+
-				(c1.getPosY() - posY) * (c1.getPosY() - posY)
-				<= (c1.getRayon() + rayon) * (c1.getRayon() + rayon));
+	public boolean intersect(Cercle c) {
+		return ((c.getPosX() - posX) * (c.getPosX() - posX)+
+				(c.getPosY() - posY) * (c.getPosY() - posY)
+				<= (c.getRayon() + rayon) * (c.getRayon() + rayon));
 	}
 	
 	public boolean intersect(Rectangle r) {
@@ -49,8 +49,16 @@ public class Cercle extends Forme {
 	}
 	
 	public  boolean intersect(Arc a) {
-		//todo
-		return true;
+		if((a.getPosX() - posX) * (a.getPosX() - posX)+(a.getPosY() - posY) * (a.getPosY() - posY)
+		   <= (a.getRayon() + rayon) * (a.getRayon() + rayon)) {
+			double angle = Math.atan2(posY - a.getPosY(),posX - a.getPosX()) + Math.PI;
+			double a1 = (a.getAlphaRef()+a.getAlpha1())%2*Math.PI;
+			double a2 = (a.getAlphaRef()+a.getAlpha2())%2*Math.PI;
+			
+			if((angle > a1 && angle < a2) || (a2 < a1 && ( angle > a1 || angle < a2)))
+				return true;
+		}
+		return false;
 	}
 	
 	

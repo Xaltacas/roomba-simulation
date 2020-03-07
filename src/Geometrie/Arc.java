@@ -4,6 +4,7 @@ public class Arc extends Forme{
 	
 	private double posX, posY, rayon;
 	private double alpha1, alpha2;
+	private double alphaRef; 
 	
 	public Arc(double x, double y, double nrayon, double nalpha1, double nalpha2){
 		this.posX = x;
@@ -11,6 +12,7 @@ public class Arc extends Forme{
 		this.rayon = nrayon;
 		this.alpha1 = nalpha1;
 		this.alpha2 = nalpha2;
+		this.alphaRef = 0;
 	}
 	
 	public String toString(){
@@ -37,27 +39,48 @@ public class Arc extends Forme{
 		return this.alpha2;
 	}
 	
+	public double getAlphaRef() {
+		return this.alphaRef;
+	}
+	
 	public void move(double nposX, double nposY,double alpha) {
 		this.posX = nposX;
 		this.posY = nposY;
-		this.alpha1 += alpha;
-		this.alpha1 %= 2*Math.PI;
-		this.alpha2 += alpha;
-		this.alpha2 %= 2*Math.PI;
+		this.alphaRef = alpha;
 	}
 	
 	public boolean intersect(Cercle c) {
-		//todo
-		return true;
+		if((c.getPosX() - posX) * (c.getPosX() - posX)+(c.getPosY() - posY) * (c.getPosY() - posY)
+		   <= (c.getRayon() + rayon) * (c.getRayon() + rayon)) {
+			double angle = Math.atan2(c.getPosY() - posY, c.getPosX() - posX) + Math.PI;
+			double a1 = (alphaRef+alpha1)%2*Math.PI;
+			double a2 = (alphaRef+alpha2)%2*Math.PI;
+			
+			if((angle > a1 && angle < a2) || (a2 < a1 && ( angle > a1 || angle < a2)))
+				return true;
+		}
+		return false;
 	}
 	
 	public boolean intersect(Rectangle r) {
-		//todo
-		return true;
+		
+		double nearestX = Math.max(r.getPosX(), Math.min(posX, r.getPosX() + r.getLength()));
+		double nearestY = Math.max(r.getPosY(), Math.min(posY, r.getPosY() + r.getHeight()));
+		
+		if(((posX - nearestX) * (posX - nearestX) + (posY - nearestY) * (posY - nearestY))
+				<= (rayon*rayon)) {
+			double angle = Math.atan2(nearestY - posY, nearestX - posX) + Math.PI;
+			double a1 = (alphaRef+alpha1)%2*Math.PI;
+			double a2 = (alphaRef+alpha2)%2*Math.PI;
+			
+			if((angle > a1 && angle < a2) || (a2 < a1 && ( angle > a1 || angle < a2)))
+				return true;
+		}
+		return false;
 	}
 	
 	public  boolean intersect(Arc a) {
-		//todo
-		return true;
+		//not usefull here
+		return false;
 	}
 }

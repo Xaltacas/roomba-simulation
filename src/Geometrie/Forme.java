@@ -7,7 +7,7 @@ public abstract class Forme {
 	
 	public abstract void move(double posX, double posY, double alpha);
 	
-	public abstract boolean intersect(Cercle c1);
+	public abstract boolean intersect(Cercle c);
 	
 	public abstract boolean intersect(Rectangle r);
 	

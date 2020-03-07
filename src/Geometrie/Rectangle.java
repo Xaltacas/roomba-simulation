@@ -39,11 +39,11 @@ public class Rectangle extends Forme{
 	
 	
 	public boolean intersect(Cercle c) {
-		double nearestX = Math.max(posX, Math.min(c.getPosX(), posX + length));//395
-		double nearestY = Math.max(posY, Math.min(c.getPosY(), posY + height));//126
+		double nearestX = Math.max(posX, Math.min(c.getPosX(), posX + length));
+		double nearestY = Math.max(posY, Math.min(c.getPosY(), posY + height));
 		
-		double deltaX = c.getPosX() - nearestX;//-17
-		double deltaY = c.getPosY() - nearestY;//0
+		double deltaX = c.getPosX() - nearestX;
+		double deltaY = c.getPosY() - nearestY;
 		
 		return (deltaX * deltaX + deltaY * deltaY) <= (c.getRayon() * c.getRayon());
 	}
@@ -54,7 +54,19 @@ public class Rectangle extends Forme{
 	}
 	
 	public  boolean intersect(Arc a) {
-		//todo
-		return true;
+		
+		double nearestX = Math.max(posX, Math.min(a.getPosX(), posX + length));
+		double nearestY = Math.max(posY, Math.min(a.getPosY(), posY + height));
+		
+		if(((posX - nearestX) * (posX - nearestX) + (posY - nearestY) * (posY - nearestY))
+				<= (a.getRayon()*a.getRayon())) {
+			double angle = Math.atan2(posY - nearestY,posX-nearestX) + Math.PI;
+			double a1 = (a.getAlphaRef()+a.getAlpha1())%2*Math.PI;
+			double a2 = (a.getAlphaRef()+a.getAlpha2())%2*Math.PI;
+			
+			if((angle > a1 && angle < a2) || (a2 < a1 && ( angle > a1 || angle < a2)))
+				return true;
+		}
+		return false;
 	}
 }

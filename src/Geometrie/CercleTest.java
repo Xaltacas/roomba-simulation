@@ -55,7 +55,7 @@ public class CercleTest {
 	public void testIntersectArc() {
 		Cercle c = new Cercle(2,2,2);
 		
-		assertTrue(c.intersect(new Arc(4,4,1,Math.PI,Math.PI/2)));
+		assertTrue(c.intersect(new Arc(4,4,1,Math.PI/2,Math.PI)));
 		assertTrue(c.intersect(new Arc(2,5,1,0,Math.PI)));
 		assertFalse(c.intersect(new Arc(3,5,1,0,Math.PI/2)));
 				

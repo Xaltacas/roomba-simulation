@@ -40,12 +40,12 @@ public class RectangleTest {
 		Rectangle r = new Rectangle(1,1,2,2);
 		
 		assertTrue(r.intersect(new Arc(0,0,2,-Math.PI/2,0)));
-		assertFalse(r.intersect(new Arc(0,0,2,Math.PI/2,0)));
+		assertFalse(r.intersect(new Arc(0,0,2,0,Math.PI/2)));
 
 		r.move(3,3,0);
 		
 		assertFalse(r.intersect(new Arc(0,0,2,-Math.PI/2,0)));
-		assertTrue(r.intersect(new Arc(2,6,2,Math.PI/2,0)));
+		assertTrue(r.intersect(new Arc(2,6,2,0,Math.PI/2)));
 	}
 
 }

@@ -1,10 +1,24 @@
 package Geometrie;
 
+/**
+ * 
+ * @author Adrien
+ *
+ * Classe représentant un rectangle
+ */
 public class Rectangle extends Forme{
 
 	private double posX,posY;
 	private double length,height;
 	
+	
+	/**
+	 * 
+	 * @param x coordonnée X du coin superieur gauche 
+	 * @param y coordonnée Y du coin superieur gauche 
+	 * @param len longueur du rectangle
+	 * @param hei hauteur du rectangle
+	 */
 	public Rectangle(double x, double y, double len, double hei){
 		this.posX = x;
 		this.posY = y;
@@ -32,12 +46,21 @@ public class Rectangle extends Forme{
 		return this.height;
 	}
 	
+	/**
+	 * @param nposX nouvelle coordonnée X du coin superieur gauche 
+	 * @param nposY nouvelle coordonnée Y du coin superieur gauche 
+	 * @param alpha inutile ici
+	 * 
+	 */
 	public void move(double nposX, double nposY, double alpha) {
 		this.posX = nposX;
 		this.posY = nposY;
 	}
 	
-	
+	/**
+	 * @param c Cercle contre lequel on test l'intersection
+	 * @return vrai si il y a intersection avec le cercle c, faux sinon
+	 */
 	public boolean intersect(Cercle c) {
 		double nearestX = Math.max(posX, Math.min(c.getPosX(), posX + length));
 		double nearestY = Math.max(posY, Math.min(c.getPosY(), posY + height));
@@ -48,11 +71,23 @@ public class Rectangle extends Forme{
 		return (deltaX * deltaX + deltaY * deltaY) <= (c.getRayon() * c.getRayon());
 	}
 	
+	/**
+	 * Not yet implemented
+	 * 
+	 * @param r Rectangle contre lequel on test l'intersection
+	 * @return false
+	 */
 	public boolean intersect(Rectangle r) {
 		//not usefull here
 		return false;
 	}
 	
+	
+	/**
+	 * 
+	 * @param a Arc contre lequel on test l'intersection
+	 * @return vrai si il y a intersection avec l'Arc a, faux sinon
+	 */
 	public  boolean intersect(Arc a) {
 		
 		double nearestX = Math.max(posX, Math.min(a.getPosX(), posX + length));

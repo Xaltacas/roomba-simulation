@@ -1,5 +1,12 @@
 package Geometrie;
 
+/**
+ * 
+ * @author Adrien
+ * 
+ * Classe abstraite de représentation des formes
+ *
+ */
 public abstract class Forme {
 	
 	
@@ -13,6 +20,11 @@ public abstract class Forme {
 	
 	public abstract boolean intersect(Arc a);
 	
+	/**
+	 * 
+	 * @param f forme contre laquelle on teste l'intersection
+	 * @return vrai si il y a intersection avec cette forme, faux sinon
+	 */
 	public boolean intersect(Forme f) {
 		if (f instanceof Cercle) {
 			Cercle cf = (Cercle) f;
@@ -32,6 +44,11 @@ public abstract class Forme {
 		return true;
 	}
 	
+	/**
+	 * 
+	 * @param angle angle a normaliser
+	 * @return l'angle normalisé entre 0 et 2*pi
+	 */
 	protected double normalizeAngle(double angle) {
 		double res = angle;
 		

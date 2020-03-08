@@ -86,9 +86,9 @@ public class Posture implements Cloneable
   }
   
   /**
-   * Convertit un angle pour qu'il soit dans [-PI;PI] (et non dans [0;2*PI] ou ailleurs)
+   * Convertit un angle pour qu'il soit dans [2*PI;0]
    * @param a Angle a convertir
-   * @return L'angle a remis dans [-PI;PI]
+   * @return L'angle a remis dans [2*PI;0]
    */
   protected double normalize_angle(double a)
   {

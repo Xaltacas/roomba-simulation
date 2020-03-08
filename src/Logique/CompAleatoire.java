@@ -2,17 +2,29 @@ package Logique;
 import Hardware.Robot;
 import java.util.Random;
 
+/**
+ * 
+ * @author Adrien
+ * 
+ * Comportement aléatoire
+ *
+ */
 public class CompAleatoire extends Comportement{
 	
 	Random rand;
 	boolean rotating;
 	int rotatecpt;
-	
+	/**
+	 * costructeur
+	 */
 	public CompAleatoire() {
 		rand = new Random();
 		rotating = false;
 	}
 	
+	/**
+	 * Déplace le robot aléatoirement ou tourne le robot sur lui meme si il detecte une collision
+	 */
 	public void move(Robot r) {
 		boolean cdState = r.cdState();
 		boolean cfState = r.cfState();

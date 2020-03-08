@@ -10,14 +10,8 @@ public class Arc extends Forme{
 		this.posX = x;
 		this.posY = y;
 		this.rayon = nrayon;
-		if( nalpha1 < nalpha2 ) {
-			this.alpha1 = nalpha1;
-			this.alpha2 = nalpha2;
-		}
-		else {
-			this.alpha1 = nalpha2;
-			this.alpha2 = nalpha1;
-		}
+		this.alpha1 = nalpha1;
+		this.alpha2 = nalpha2;
 
 		this.alphaRef = 0;
 	}

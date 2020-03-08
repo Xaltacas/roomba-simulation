@@ -22,9 +22,10 @@ public class Robot {
 		
 		p = new Posture(nposX,nposY,0);
 		
-		this.contdroit = new CapteurCollision(this, this.diametre/2, 3/2*Math.PI, 11/6*Math.PI);
-		this.contface = new CapteurCollision(this, this.diametre/2, 11/6*Math.PI, 1/6*Math.PI);
-		this.contgauche = new CapteurCollision(this, this.diametre/2, 1/6*Math.PI,  1/2*Math.PI);
+		this.contdroit = new CapteurCollision(this, this.diametre/2, 3./2.*Math.PI, 11./6.*Math.PI);
+		this.contface = new CapteurCollision(this, this.diametre/2, 1./6.*Math.PI, 11./6.*Math.PI);
+		this.contgauche = new CapteurCollision(this, this.diametre/2, 1./6.*Math.PI,  1./2.*Math.PI);
+		this.sal = new CapteurSalete(this,5);
 		
 
 		
@@ -33,10 +34,11 @@ public class Robot {
 	
 	public void updatePos() {
 		comp.move(this);
+		sal.detect();
 	}
 	
-	public void move(double d_l, double d_r,double ecartRoues) {
-		p.move(d_l, d_r, ecartRoues);
+	public void move(double d_l, double d_r) {
+		p.move(d_l, d_r, diametre);
 	}
 	
 	public double getPosX() {return this.p.getX();}

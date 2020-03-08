@@ -31,14 +31,16 @@ public class Simulation implements ActionListener{
 	//action a réaliser en cas de detection d'un Evennement 
 	public void actionPerformed (ActionEvent e) {
 		if (e.getSource()== bouton) { // cas ou l'evennement detecte est un clic sour le bouton start
-			System.out.println("ici");
+			System.out.println("Début de la simulation");
 			attente = false;
 		}
 		if (e.getSource()==boutonStop) {// cas ou l'evennement detecte est un clic sour le bouton pause
 			if (pause == true) {
 				pause = false;
+				System.out.println("Reprise de la simulation");
 			}else {
 				pause = true;
+				System.out.println("Simulation en pause");
 			}
 		}
 	}
@@ -84,7 +86,7 @@ public class Simulation implements ActionListener{
 		env.addElem(o3);
 		
 		// création du robot et ajout à l'environement 
-		Hardware.Robot r = new Hardware.Robot (34,100,300,env, new CompAleatoire());
+		Hardware.Robot r = new Hardware.Robot (34,200,200,env, new CompAleatoire());
 		env.addRobot(r);
 		
 		// on enregistre la simulation comme listener

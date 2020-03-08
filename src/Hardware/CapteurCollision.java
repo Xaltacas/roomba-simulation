@@ -10,18 +10,12 @@ public class CapteurCollision extends Capteur {
 	
 	public boolean collide() {
 		this.UpdatePos();
-		/*
 		for(Element elem : robot.getEnv().getElems()) {
-			if(this.forme.intersect(elem.getForme()))
-				return true;
-		}
-		*/
-		for(Element elem : robot.getEnv().getElems()) {
-			if(elem.getForme().intersect(new Cercle(robot.getPosX(),robot.getPosY(),robot.getDiametre()/2))) {
-				System.out.println("robot   " + robot.toString());
-				System.out.println("capteur   " + forme.toString());
+			if(elem.getIsSolid() && this.forme.intersect(elem.getForme())) {
+				//System.out.println(robot.toString());
+				//System.out.println("capteur   " + forme.toString());
 				
-				System.out.println("collision avec " + elem.toString());
+				//System.out.println("collision avec " + elem.toString());
 				return true;
 			}
 		}

@@ -17,7 +17,6 @@ public class Environement {
 	private ArrayList<Element> elems;
 	private int sizeX;
 	private int sizeY;
-	private int nbTaches;
 	
 	// constructeur 
 	

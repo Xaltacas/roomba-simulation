@@ -24,6 +24,7 @@ public class Simulation implements ActionListener{
 	// création de boutons
 	static JButton bouton = new JButton("Start");
 	static JButton boutonStop = new JButton("Pause");
+	static JButton boutonPlay = new JButton("Play");
 	
 	/**
 	 * @param e Evenement detecte
@@ -35,14 +36,18 @@ public class Simulation implements ActionListener{
 			attente = false;
 		}
 		if (e.getSource()==boutonStop) {// cas ou l'evennement detecte est un clic sour le bouton pause
-			if (pause == true) {
-				pause = false;
-				System.out.println("Reprise de la simulation");
-			}else {
+				boutonStop.setVisible(false);
+				boutonPlay.setVisible(true);
 				pause = true;
 				System.out.println("Simulation en pause");
-			}
 		}
+		if(e.getSource()==boutonPlay) {
+			pause = false;
+			boutonPlay.setVisible(false);
+			System.out.println("Reprise de la simulation");
+			boutonStop.setVisible(true);
+		}
+		
 	}
 	
 	public static void main(String[] args) {
@@ -92,6 +97,7 @@ public class Simulation implements ActionListener{
 		// on enregistre la simulation comme listener
 		bouton.addActionListener(new Simulation());
 		boutonStop.addActionListener(new Simulation());
+		boutonPlay.addActionListener(new Simulation());
 		
 
 		//Nouvelle fenetre
@@ -101,7 +107,7 @@ public class Simulation implements ActionListener{
 		//la taille fenetre fixe
 		ma_fenetre.setResizable(false);
 		//mise au blanc du fond de la fenetre
-		ma_fenetre.setBackground(Color.white);
+		//ma_fenetre.setBackground(Color.white);
 		//permet la feneture de la fenetre et l'arret du programme en cliquant sur l'icone de fermeture de la fenetre
 		ma_fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -109,10 +115,12 @@ public class Simulation implements ActionListener{
 		IHMRoomba IHM = new IHMRoomba(env);// Nouvel objet IHMRoomba
 		IHM.setPreferredSize(new Dimension(env.getSizeX(),env.getSizeY()));//taille de la fenetre
 		ma_fenetre.setContentPane(IHM);//le contenu est l'objet IHM
+		ma_fenetre.getContentPane().setBackground(Color.white);
 		ma_fenetre.add(bouton);// ajout du bouton Start
+		ma_fenetre.add(boutonPlay);
 		ma_fenetre.pack();
 		ma_fenetre.setVisible(true);
-		
+		boutonPlay.setVisible(false);
 		while (attente) { // attend que la consigne Stat soit envoyee
 			
 		}
@@ -122,9 +130,11 @@ public class Simulation implements ActionListener{
 		while (true) {
 			
 			if (pause) { // attend le temps que la consigne pause soit mise à false
-				
+			//	bouton.setVisible(true);
 			}else {
-				
+			if (env.getNbTaches()==0) {
+				pause = true;
+			}
 			r.updatePos();//met à jour les positions du robot
 			try {Thread.sleep(10);}
 			catch(Exception e) {}

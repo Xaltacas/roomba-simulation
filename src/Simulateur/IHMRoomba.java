@@ -3,6 +3,7 @@ import java.awt.*;
 import javax.swing.*;
 import Piece.Environement;
 import Piece.Element;
+import Piece.Obstacle;
 import Geometrie.Cercle;
 import  java.lang.*;
 
@@ -15,10 +16,7 @@ public class IHMRoomba extends JPanel {
 	
 	//Attribut
 	private Environement env;
-	private int prev_x;
-	private int prev_y;
 
-	
 	
 	//Constructeur 
 	/**
@@ -46,12 +44,19 @@ public class IHMRoomba extends JPanel {
 				// re-instancie la forme de l'Element pour pouvoir faire appel aux methdodes de la classe 
 				Cercle ncercle = (Cercle) env.getElems().get(i).getForme(); 
 				// récupération de la couleur de l'Element
-				g2.setColor(env.getElems().get(i).getColor()); 
-				// dessine un disque plein
-				g2.fillOval((int)ncercle.getPosX()- (int) ncercle.getRayon(),(int)ncercle.getPosY() - (int) ncercle.getRayon(),(int) ncercle.getRayon()*2,(int)ncercle.getRayon()*2);
-				g2.setColor(Color.black );
-				//dessine le contour du cercle
-				g2.drawOval((int)ncercle.getPosX()- (int) ncercle.getRayon(),(int)ncercle.getPosY() - (int) ncercle.getRayon(),(int) ncercle.getRayon()*2,(int)ncercle.getRayon()*2);
+				if (env.getElems().get(i) instanceof Obstacle) {
+					g2.setColor(env.getElems().get(i).getColor()); 
+					// dessine un disque plein
+					g2.fillOval((int)ncercle.getPosX()- (int) ncercle.getRayon(),(int)ncercle.getPosY() - (int) ncercle.getRayon(),(int) ncercle.getRayon()*2,(int)ncercle.getRayon()*2);
+					g2.setColor(Color.black );
+					//dessine le contour du cercle
+					g2.drawOval((int)ncercle.getPosX()- (int) ncercle.getRayon(),(int)ncercle.getPosY() - (int) ncercle.getRayon(),(int) ncercle.getRayon()*2,(int)ncercle.getRayon()*2);
+				
+				}else {
+					g2.setColor(env.getElems().get(i).getColor()); 
+					// dessine un disque plein
+					g2.fillOval((int)ncercle.getPosX()- (int) ncercle.getRayon(),(int)ncercle.getPosY() - (int) ncercle.getRayon(),(int) ncercle.getRayon()*2,(int)ncercle.getRayon()*2);
+				}
 			}
 			// même méthode dans le cas d'un Element rectangulaire
 			else if (env.getElems().get(i).getForme() instanceof Geometrie.Rectangle) {
